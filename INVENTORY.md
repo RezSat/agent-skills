@@ -4,6 +4,17 @@ This inventory describes **files actually shipped under `skills/`**, not every s
 
 **37 published skills**, all in `skills/matt-pocock/<skill-name>/`. The categories below help discover a workflow; category membership does not change its invocation name or prerequisites.
 
+## Curated language and framework quality (RezSat originals)
+
+- `go-quality` — idiomatic Go, errors, concurrency, testing, profiling
+- `typescript-quality` — typed contracts, runtime validation, async safety, modules
+- `nestjs-quality` — DI, DTO validation, auth, module boundaries, e2e tests
+- `react-quality` — pure rendering, state/effects, accessibility, profiler-based optimization
+- `nextjs-quality` — server/client split, router/version awareness, cache isolation, mutations
+- `python-quality` — typing, packaging, resource safety, async, testing, profiling
+
+These are **original distilled instructions**, not republished community skills. Each links to primary documentation and adapts to the target repository's version and tools. See [ENGINEERING_STANDARDS.md](ENGINEERING_STANDARDS.md).
+
 ## Planning, product discovery, and architecture
 
 - `ask-matt`
