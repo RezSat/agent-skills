@@ -6,3 +6,4 @@
 - Preserve upstream licenses and record provenance/adaptations when importing.
 - Keep INVENTORY.md consistent with skill folders actually published, not local plugin caches or user-machine inventories.
 - Verify companion files and run `python scripts/validate-skills.py` before committing.
+- For coding sessions in this repository under a supported Codex environment, use `skills/rezsat/capsule-workflow/SKILL.md`: check Capsule first, install from its official source if missing, preserve compression and safety hooks, and use the tested `CAPSULE_ADVISOR=0` advisor opt-out before launching a fresh Codex process.

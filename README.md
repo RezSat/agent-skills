@@ -1,6 +1,6 @@
 # Agent Skills
 
-Reusable agent workflows for engineering software across different applications and repositories. The library favors project-independent planning, architecture, implementation, testing, debugging, review, and developer tooling.
+This is **my personal collection of agent skills**: the instructions, engineering preferences, and workflows I use when building software. It is not an official standard or a claim that every project needs every skill. I keep the instructions reusable across applications instead of exporting project-specific rules.
 
 ## Install
 
@@ -13,6 +13,36 @@ npx skills add RezSat/agent-skills --skill tdd
 ```
 
 Choose any published skill name from [INVENTORY.md](INVENTORY.md). For manual installation, copy the complete skill directory into a discovery root supported by your agent, such as `.agents/skills`, and refresh the client.
+
+## My default coding workflow: Capsule first
+
+I use [Capsule](https://github.com/hakiyaka/capsule) for token-efficient, exact-recoverable context during coding. **Whenever I start coding in a project**, check whether the **actual Capsule MCP plugin** is available (use its `doctor` action). If it is, use the existing installation. If not, install the official Capsule plugin in a supported Codex environment, verify it, and use it for focused project/file inspection and compact command output.
+
+**My tested Capsule 1.0.7 setting:** Start a **fresh** Codex process with `CAPSULE_ADVISOR=0`. This disables Capsule's optional advisor tool-call ceiling; it does **not** turn off compression, exact-output recovery, security controls, or other independent limits.
+
+For PowerShell:
+
+```powershell
+$env:CAPSULE_ADVISOR="0"
+codex
+```
+
+For Windows Command Prompt:
+
+```cmd
+set CAPSULE_ADVISOR=0
+codex
+```
+
+For POSIX shells, launch with `CAPSULE_ADVISOR=0 codex`. Set this in the actual launching environment **before** starting Codex; restarting is necessary if it was already running. Do not change Capsule source code, disable unrelated hooks, or install the unrelated npm package named `capsule`.
+
+See the **[capsule-workflow skill](skills/rezsat/capsule-workflow/SKILL.md)** for the check → install-if-missing → verify → use procedure, including the official local-plugin setup and safety boundary. To make this rule available in each new project, install that skill there:
+
+```sh
+npx skills add RezSat/agent-skills --skill capsule-workflow
+```
+
+The README alone does not configure other projects automatically: the receiving coding agent must load this skill or have an equivalent pointer in its project's `AGENTS.md`.
 
 ## Curated language and framework quality
 
