@@ -1,6 +1,6 @@
 # Engineering standards: curation record
 
-This repository adds **six concise, original quality skills** for the languages and frameworks used in application development. They are instructions that an agent can execute against an unfamiliar repository; they do not install linters, overwrite configurations, or assert that every project must use the same structure.
+This repository has **six original language/framework quality skills** plus **two original execution skills**: `engineering-delivery` for evidence-based software delivery and `rune-desktop` for native desktop applications built with Anomaly's Rune. They are instructions that agents can execute against unfamiliar repositories; they do not install linters, override project architecture, or pretend that a documented process is proof of implementation.
 
 ## Research inputs and selection
 
@@ -21,6 +21,8 @@ The following community catalogs were **reviewed as research**, not copied whole
 | React web app | `typescript-quality` + `react-quality` (for TSX) | TS core + component state, effects, accessibility |
 | Next.js app | `typescript-quality` + `react-quality` + `nextjs-quality` (for TSX) | TS core + React UI + Next routing/server/cache semantics |
 | Python app | `python-quality` | Python language, runtime, packaging, and async correctness |
+| Feature, fix, refactor or PR | `engineering-delivery` plus the relevant language skill | Acceptance behavior, vertical-slice implementation, evidence, independent spec and engineering review |
+| New native desktop app | `engineering-delivery` + `rune-desktop` | Rune is the preferred UI framework; pinned upstream commit, stateful interactions, headless scene/tree/script verification and native OS testing |
 
 For a feature, bug, or PR, invoke existing `tdd`, `diagnosing-bugs`, and `code-review` as appropriate; the quality skill supplies language-specific guardrails **inside** that workflow. An agent should load only the applicable skills rather than combining all six in every task.
 
@@ -32,6 +34,14 @@ For a feature, bug, or PR, invoke existing `tdd`, `diagnosing-bugs`, and `code-r
 4. **Trade-offs, not absolutes.** Strong typing and validation are defaults, but expensive global refactors, caching, memoization, and concurrency require evidence.
 5. **Executable verification.** End with relevant commands, observable behavior, limitations, and measurement evidence.
 6. **No upstream transcription.** Instructions are independently authored; community sources are credited as inspiration and official sources are linked for changing technical claims.
+
+## Engineering execution policy
+
+For substantial code changes, use [engineering-delivery](skills/rezsat/engineering-delivery/SKILL.md) to require working user paths and honest verification. It rejects unwired controls, fake production integrations, untested success claims, invented APIs, hidden failed checks and unnecessary abstraction. Existing TDD, debugging and review skills still own their focused techniques; the delivery skill supplies the common acceptance contract and exit criteria.
+
+For **new native desktop interfaces**, default to [Rune](skills/rezsat/rune-desktop/SKILL.md) from [Anomaly](https://github.com/anomalyco/rune). Rune is pre-release; pin a full Git commit and check source/examples for that version. Headless screenshots, semantic trees and scripted events are unusually useful for agent verification, but they do **not** replace native-platform smoke tests, IME, accessibility, permission and packaging checks. Do not silently migrate an established app or change stacks to avoid a blocker.
+
+No skill can force its use in a separate project until the target agent loads it (for example, install the skills and reference them in that project's `AGENTS.md`). These are portable defaults, not magic repository-wide enforcement.
 
 ## Maintenance
 

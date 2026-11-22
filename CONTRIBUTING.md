@@ -14,6 +14,7 @@ Before publishing a local skill:
 4. **Remove personal and private data.** Check for workstation paths, account or customer identifiers, internal hosts, tokens, API keys, personal notes, and private project content. Examples must be synthetic.
 5. **Preserve provenance.** When importing others' work, record the source, revision, author, license, and changes. Keep accompanying notices; do not publish source material without redistribution rights.
 6. **Verify the complete folder.** Every relative link, script, reference, and template the skill uses must be present. Run its documented check in a suitable project, not only YAML validation.
+7. **Prefer executable evidence to slogans.** A coding skill must say what behavior to check, how to check it, what failure looks like and how to report a blocked check. Avoid unsupported framework APIs, pretend integrations, ceremonial boilerplate, and untestable claims.
 
 ## Layout and format
 

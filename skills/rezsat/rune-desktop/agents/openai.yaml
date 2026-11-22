@@ -1,0 +1,3 @@
+interface:
+  display_name: "Rune Desktop"
+  short_description: "Build and verify native Rune desktop apps"
