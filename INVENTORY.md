@@ -2,7 +2,7 @@
 
 This inventory describes **files actually shipped under `skills/`**, not every skill installed on a particular machine. It intentionally excludes user home directories, project workspaces, plugin caches, and private paths.
 
-**45 published skills**: 37 retained upstream skills in `skills/matt-pocock/<skill-name>/` and eight original RezSat skills in `skills/rezsat/<skill-name>/`. The categories below help discover a workflow; category membership does not change its invocation name or prerequisites.
+**47 published skills**: 37 retained upstream skills in `skills/matt-pocock/<skill-name>/` and ten original RezSat skills in `skills/rezsat/<skill-name>/`. The categories below help discover a workflow; category membership does not change its invocation name or prerequisites.
 
 ## Curated language and framework quality (RezSat originals)
 
@@ -14,6 +14,13 @@ This inventory describes **files actually shipped under `skills/`**, not every s
 - `python-quality` — typing, packaging, resource safety, async, testing, profiling
 
 These are **original distilled instructions**, not republished community skills. Each links to primary documentation and adapts to the target repository's version and tools. See [ENGINEERING_STANDARDS.md](ENGINEERING_STANDARDS.md).
+
+## Engineering execution and native desktop (RezSat originals)
+
+- `engineering-delivery` — evidence-based implementation: acceptance contract, real end-to-end behavior, tests, independent spec/standards review and truthful PR handoff
+- `rune-desktop` — default for new native desktop UI; pinned Anomaly Rune revision, state-driven Rust UI, accessible interactions, headless screenshots/trees/scripts and native smoke checks
+
+These two skills complement existing TDD, debugging, code review, and the six language/framework quality skills. See [engineering standards](ENGINEERING_STANDARDS.md) and the [Rune skill](skills/rezsat/rune-desktop/SKILL.md). Neither is an upstream import.
 
 ## Personal coding workflow (RezSat originals)
 

@@ -71,6 +71,24 @@ Use the base language skill with the relevant framework skill (for example, Type
 
 Install individually, for example: `npx skills add RezSat/agent-skills --skill go-quality`.
 
+## Engineering delivery: prove the change works
+
+The [`engineering-delivery` skill](skills/rezsat/engineering-delivery/SKILL.md) is the default **quality gate for non-trivial coding work**. Agents inspect the existing system, define observable acceptance criteria, implement a real vertical slice, run proportional tests, inspect the diff on both spec and engineering axes, and report what was actually verified. It rejects dead UI, invented APIs, fake integration presented as production, unexplained stubs and unsupported "production ready" claims.
+
+```sh
+npx skills add RezSat/agent-skills --skill engineering-delivery
+```
+
+## Native desktop default: Rune by Anomaly
+
+For **new native desktop apps**, use [Rune](https://github.com/anomalyco/rune), the Rust GPU-rendered UI framework by Anomaly. The [`rune-desktop` skill](skills/rezsat/rune-desktop/SKILL.md) requires a pinned Git revision and checks that go beyond compiling: real state transitions, keyboard/accessibility semantics, screenshot inspection, tree inspection, scripted events, native-platform behavior and release limitations. Rune is still pre-release; inspect official APIs at the chosen pin.
+
+```sh
+npx skills add RezSat/agent-skills --skill rune-desktop
+```
+
+Install both skills for a new desktop project and point the project's `AGENTS.md` to them. Merely changing this repository does **not** install the skills in other projects or override an existing desktop application's architecture.
+
 ## What's included
 
 - **General engineering:** discovery, architecture, domain modeling, implementation, testing, debugging, code review, and handoffs.
