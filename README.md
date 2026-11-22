@@ -1,6 +1,6 @@
 # Agent Skills
 
-This is **my personal collection of agent skills**: the instructions, engineering preferences, and workflows I use when building software. It is not an official standard or a claim that every project needs every skill. I keep the instructions reusable across applications instead of exporting project-specific rules.
+My personal collection of reusable agent skills, engineering preferences, and workflows for building software. Project-specific instructions stay in their application repositories.
 
 ## Install
 
@@ -43,6 +43,16 @@ npx skills add RezSat/agent-skills --skill capsule-workflow
 ```
 
 The README alone does not configure other projects automatically: the receiving coding agent must load this skill or have an equivalent pointer in its project's `AGENTS.md`.
+
+## Writing style
+
+Use [`engineering-style`](skills/rezsat/engineering-style/SKILL.md) alongside the relevant language or framework skill. It sets my preferences for simple code, purposeful comments, direct documentation, and natural Git commit messages without generated-looking prefixes.
+
+```sh
+npx skills add RezSat/agent-skills --skill engineering-style
+```
+
+Add a pointer to this skill in each project's `AGENTS.md` if you want it applied whenever an agent works there. The central repository README does not enforce preferences in unrelated projects on its own.
 
 ## Curated language and framework quality
 

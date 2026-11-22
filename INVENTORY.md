@@ -2,7 +2,7 @@
 
 This inventory describes **files actually shipped under `skills/`**, not every skill installed on a particular machine. It intentionally excludes user home directories, project workspaces, plugin caches, and private paths.
 
-**46 published skills**: 37 retained upstream skills in `skills/matt-pocock/<skill-name>/` and nine original RezSat skills in `skills/rezsat/<skill-name>/`. The categories below help discover a workflow; category membership does not change its invocation name or prerequisites.
+**47 published skills**: 37 retained upstream skills in `skills/matt-pocock/<skill-name>/` and ten original RezSat skills in `skills/rezsat/<skill-name>/`. The categories below help discover a workflow; category membership does not change its invocation name or prerequisites.
 
 ## Curated language and framework quality (RezSat originals)
 
@@ -22,8 +22,9 @@ These are **original distilled instructions**, not republished community skills.
 
 These two skills complement existing TDD, debugging, code review, and the six language/framework quality skills. See [engineering standards](ENGINEERING_STANDARDS.md) and the [Rune skill](skills/rezsat/rune-desktop/SKILL.md). Neither is an upstream import.
 
-## Personal coding workflow (RezSat original)
+## Personal coding workflow (RezSat originals)
 
+- `engineering-style` — plain code, purposeful comments, direct documentation, and natural descriptive Git commits. See [its skill](skills/rezsat/engineering-style/SKILL.md).
 - `capsule-workflow` — when coding starts, detect Capsule; install its official Codex plugin if missing; disable only the tested optional advisor ceiling with `CAPSULE_ADVISOR=0`; verify and use exact-recoverable context tools. See [its skill](skills/rezsat/capsule-workflow/SKILL.md).
 
 ## Planning, product discovery, and architecture
