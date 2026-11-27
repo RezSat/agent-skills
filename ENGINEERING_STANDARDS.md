@@ -1,6 +1,6 @@
 # Engineering standards: curation record
 
-This repository has **six original language/framework quality skills**, **two frontend workflow skills**, and **two original execution skills**: `engineering-delivery` for evidence-based software delivery and `rune-desktop` for native desktop applications built with Anomaly's Rune. The frontend workflows route React web work through project discovery and Layro component reuse. They are instructions that agents can execute against unfamiliar repositories; they do not install linters, override project architecture, or pretend that a documented process is proof of implementation.
+This repository has **six original language/framework quality skills**, **two frontend workflow skills**, **two execution skills**, and **two personal coding workflow skills**. The execution skills are `engineering-delivery` for evidence-based software delivery and `rune-desktop` for native desktop applications built with Anomaly's Rune. The frontend workflows route React web work through project discovery and Layro component reuse. These are instructions that agents can execute against unfamiliar repositories; they do not install linters, override project architecture, or pretend that a documented process is proof of implementation.
 
 ## Research inputs and selection
 
