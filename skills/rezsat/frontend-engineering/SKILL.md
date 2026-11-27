@@ -11,7 +11,7 @@ Use this as the entry point for frontend feature work, new React web projects, U
 
 - Inspect the package manifest, lockfile, scripts, framework and React versions, routing model, styling system, design tokens, existing component library, test setup, and repository instructions.
 - Identify whether this is an existing application or a new project. Preserve an established architecture unless the task requires a deliberate change.
-- Confirm the actual user path, responsive requirements, data source, loading/error/empty states, and accessibility expectations before building.
+- Confirm the actual user path, responsive requirements, data source, loading/error/empty states, and accessibility expectations before building. Inventory reusable local components and approved design references; identify existing performance budgets and constraints.
 
 ## 2. Load focused engineering skills
 
@@ -27,17 +27,17 @@ Do not load unrelated language or platform skills. Layro is for React web UI, no
 
 ## 3. Check Layro before implementing reusable UI
 
-For a React web project, decide whether the requested interface contains a meaningful reusable component candidate. If yes, invoke `layro-ui` before writing that UI.
+For a React web project, first check whether the interface can reuse or extend an existing local component. If a meaningful reusable candidate remains and the design would benefit from a catalog component, invoke `layro-ui` before writing that UI. Skip trivial or bespoke elements where local implementation is a better fit.
 
 - Verify that the active coding agent has working Layro MCP access.
-- If access is missing, configure the active client using the official Layro instructions and complete OAuth when required. For Codex, use `codex mcp add layro --url https://mcp.layro.dev`, then `codex mcp login layro`, and verify with `codex mcp list` plus a real search.
-- Search for relevant components, inspect source, dependencies, and licence, then install only suitable components.
+- If access is missing, request approval before changing user/global MCP configuration, installing machine-level tools, or initiating authentication. Use the official Layro instructions when authorized. For Codex, use `codex mcp add layro --url https://mcp.layro.dev`, then `codex mcp login layro`, and verify with `codex mcp list` plus a real search.
+- Search for relevant components, compare with the local option, inspect source, dependencies and licence, and install only suitable components within the project's dependency budget. Follow `layro-ui` for provenance, safe installation and fallback.
 - If the user must approve authentication or the environment prevents setup, ask for the required action and state the blocker. Do not claim that Layro is connected when it is not.
 - If no suitable component exists, proceed with the project's existing design system and implement it locally. Do not delay unrelated backend or setup work while looking for a component.
 
 ## 4. Build the actual product UI
 
-- Establish or follow the product's visual language: hierarchy, typography, spacing, color, surfaces, density, and interaction patterns.
+- Establish or follow the product's visual language: hierarchy, typography, spacing, color, surfaces, density, and interaction patterns. Treat an approved design as the source of truth, not the registry preview. Adapt catalog components to it rather than letting the catalog determine the design.
 - Prefer small, cohesive components and explicit state. Keep server data, URL state, shared state, and transient UI state distinct.
 - Use semantic elements and accessible interactions. Include keyboard, focus, responsive, reduced-motion, and error behavior.
 - Wire every visible control to real behavior. Do not ship decorative controls that appear functional but do nothing.
@@ -47,9 +47,11 @@ For a React web project, decide whether the requested interface contains a meani
 
 - Run the relevant lint, typecheck, unit/integration tests, and production build.
 - Exercise the important user path at realistic viewport sizes, including loading, empty, error, and success states.
-- Check keyboard navigation, focus, accessible names, and interaction feedback.
+- Check keyboard navigation, focus, accessible names, contrast, reduced-motion behavior and interaction feedback where relevant.
+- Capture and inspect rendered screenshots at representative desktop and mobile sizes, relevant themes and important states; compare with the approved design or existing UI. Use behavioral assertions alongside visual inspection. Fix material visual regressions.
+- For meaningful dependency or performance changes, measure representative before/after builds against the project's budget; report unmeasured claims as unverified.
 - Inspect the final diff and remove unused demo code, accidental configuration churn, and unnecessary dependencies.
-- Report observable behavior, exact checks and results, and any remaining limitations. Never claim visual or accessibility verification that was not performed.
+- Report observable behavior, exact checks and results, component provenance when used, and any remaining limitations. Never claim visual or accessibility verification that was not performed.
 
 ## Project handoff
 
