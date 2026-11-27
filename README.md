@@ -48,7 +48,7 @@ The README alone does not configure other projects automatically: the receiving 
 
 For React and Next.js web projects, use the [frontend-engineering skill](skills/rezsat/frontend-engineering/SKILL.md) as the entry point. It inspects the project first, selects the relevant TypeScript/React/Next.js quality skills, and checks Layro before implementing reusable UI.
 
-The [layro-ui skill](skills/rezsat/layro-ui/SKILL.md) requires the coding agent to verify working Layro MCP access, configure and authenticate it when possible, search the catalog, inspect source/dependencies/licence, install suitable components, and verify the integration. Layro is a React component marketplace. It is not a default for native desktop or non-React projects, and it must never be forced when no component fits.
+The [layro-ui skill](skills/rezsat/layro-ui/SKILL.md) requires the coding agent to verify working Layro MCP access, configure and authenticate it when possible, search the catalog, inspect source/dependencies/licence, install suitable components, and verify the integration. Layro is a React component marketplace. Reuse local components first, preserve the product's visual identity, control dependency cost, record component provenance, and inspect rendered screenshots alongside behavioral tests. It is not a default for native desktop or non-React projects, and it must never be forced when no component fits. User/global MCP setup, machine-level installation and new authentication require explicit approval.
 
 Install both skills in a new frontend project:
 
