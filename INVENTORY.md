@@ -2,7 +2,7 @@
 
 This inventory describes **files actually shipped under `skills/`**, not every skill installed on a particular machine. It intentionally excludes user home directories, project workspaces, plugin caches, and private paths.
 
-**47 published skills**: 37 retained upstream skills in `skills/matt-pocock/<skill-name>/` and ten original RezSat skills in `skills/rezsat/<skill-name>/`. The categories below help discover a workflow; category membership does not change its invocation name or prerequisites.
+**49 published skills**: 37 retained upstream skills in `skills/matt-pocock/<skill-name>/` and twelve original RezSat skills in `skills/rezsat/<skill-name>/`. The categories below help discover a workflow; category membership does not change its invocation name or prerequisites.
 
 ## Curated language and framework quality (RezSat originals)
 
@@ -15,12 +15,19 @@ This inventory describes **files actually shipped under `skills/`**, not every s
 
 These are **original distilled instructions**, not republished community skills. Each links to primary documentation and adapts to the target repository's version and tools. See [ENGINEERING_STANDARDS.md](ENGINEERING_STANDARDS.md).
 
+## Frontend workflows (RezSat originals)
+
+- `frontend-engineering` — frontend entry point that discovers project conventions, selects focused skills, and checks Layro before reusable React UI work
+- `layro-ui` — Layro MCP/CLI discovery, access verification, component inspection, safe installation, integration, and UI verification
+
+These skills are React-web-specific where Layro is involved. They do not apply to native desktop or non-React projects. See [the frontend engineering skill](skills/rezsat/frontend-engineering/SKILL.md) and [the Layro skill](skills/rezsat/layro-ui/SKILL.md).
+
 ## Engineering execution and native desktop (RezSat originals)
 
-- `engineering-delivery` — evidence-based implementation: acceptance contract, real end-to-end behavior, tests, independent spec/standards review and truthful PR handoff
-- `rune-desktop` — default for new native desktop UI; pinned Anomaly Rune revision, state-driven Rust UI, accessible interactions, headless screenshots/trees/scripts and native smoke checks
+- `engineering-delivery` — evidence-based implementation: acceptance contract, real end-to-end behavior, tests, independent spec/engineering review and truthful PR handoff
+- `rune-desktop` — default for new native desktop UI; pinned Anomaly Rune revision, state-driven Rust UI, accessible interactions, headless screenshots/trees/scripts and native OS testing
 
-These two skills complement existing TDD, debugging, code review, and the six language/framework quality skills. See [engineering standards](ENGINEERING_STANDARDS.md) and the [Rune skill](skills/rezsat/rune-desktop/SKILL.md). Neither is an upstream import.
+These skills complement existing TDD, debugging, code review, and the six language/framework quality skills. See [engineering standards](ENGINEERING_STANDARDS.md) and the [Rune skill](skills/rezsat/rune-desktop/SKILL.md). Neither is an upstream import.
 
 ## Personal coding workflow (RezSat originals)
 
@@ -80,7 +87,7 @@ These two skills complement existing TDD, debugging, code review, and the six la
 
 | Decision | Reason |
 | --- | --- |
-| **Retain** the 37 skills listed above | They are reusable workflows or explicitly conditional on a common tool, language, or environment; they are not tied to a particular client application. |
+| **Retain** the 37 skills listed above | They are reusable workflows or explicitly conditional on a common tool, language, or environment; they are not tied to a particular customer or application. |
 | **Retain** TypeScript-specific `setup-ts-deep-modules` and `migrate-to-shoehorn` | Language and library specialization is acceptable when the dependency is stated and the skill works in different repositories. |
 | **Retain** Claude Code and Husky workflows | These require named developer tools, not a particular customer or application. Use only where those tools are installed. |
 | **Exclude** `scaffold-exercises` | It hardcodes one course's `exercises/XX-section/XX.YY-exercise` structure and `pnpm ai-hero-cli internal lint`; there is no general application-engineering use case that justifies publishing those assumptions. |

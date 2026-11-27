@@ -42,7 +42,30 @@ See the **[capsule-workflow skill](skills/rezsat/capsule-workflow/SKILL.md)** fo
 npx skills add RezSat/agent-skills --skill capsule-workflow
 ```
 
-The README alone does not configure other projects automatically: the receiving coding agent must load this skill or have an equivalent pointer in its project's `AGENTS.md`.
+The README alone does not configure other projects automatically: the receiving coding agent must load this skill or have an equivalent pointer in that project's `AGENTS.md`.
+
+## Frontend engineering and Layro
+
+For React and Next.js web projects, use the [frontend-engineering skill](skills/rezsat/frontend-engineering/SKILL.md) as the entry point. It inspects the project first, selects the relevant TypeScript/React/Next.js quality skills, and checks Layro before implementing reusable UI.
+
+The [layro-ui skill](skills/rezsat/layro-ui/SKILL.md) requires the coding agent to verify working Layro MCP access, configure and authenticate it when possible, search the catalog, inspect source/dependencies/licence, install suitable components, and verify the integration. Layro is a React component marketplace. It is not a default for native desktop or non-React projects, and it must never be forced when no component fits.
+
+Install both skills in a new frontend project:
+
+```sh
+npx skills add RezSat/agent-skills --skill frontend-engineering
+npx skills add RezSat/agent-skills --skill layro-ui
+```
+
+For Codex, the documented Layro connection is:
+
+```sh
+codex mcp add layro --url https://mcp.layro.dev
+codex mcp login layro
+codex mcp list
+```
+
+The first successful Layro MCP call completes browser-based GitHub OAuth approval. See [Layro's MCP documentation](https://layro.dev/docs/mcp) for other clients. A skill in this repository does not automatically configure unrelated projects or machine-level MCP clients: install the skills and reference `frontend-engineering` in the target project's `AGENTS.md`.
 
 ## Writing style
 

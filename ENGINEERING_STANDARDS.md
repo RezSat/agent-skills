@@ -1,6 +1,6 @@
 # Engineering standards: curation record
 
-This repository has **six original language/framework quality skills** plus **two original execution skills**: `engineering-delivery` for evidence-based software delivery and `rune-desktop` for native desktop applications built with Anomaly's Rune. They are instructions that agents can execute against unfamiliar repositories; they do not install linters, override project architecture, or pretend that a documented process is proof of implementation.
+This repository has **six original language/framework quality skills**, **two frontend workflow skills**, and **two original execution skills**: `engineering-delivery` for evidence-based software delivery and `rune-desktop` for native desktop applications built with Anomaly's Rune. The frontend workflows route React web work through project discovery and Layro component reuse. They are instructions that agents can execute against unfamiliar repositories; they do not install linters, override project architecture, or pretend that a documented process is proof of implementation.
 
 ## Research inputs and selection
 
@@ -18,11 +18,13 @@ The following community catalogs were **reviewed as research**, not copied whole
 | Go backend or CLI | `go-quality` | Go language and runtime choices |
 | TypeScript library / service | `typescript-quality` | Type safety, runtime boundaries, async and API contracts |
 | NestJS API | `typescript-quality` + `nestjs-quality` | TS core + Nest lifecycle, validation, providers and auth |
-| React web app | `typescript-quality` + `react-quality` (for TSX) | TS core + component state, effects, accessibility |
-| Next.js app | `typescript-quality` + `react-quality` + `nextjs-quality` (for TSX) | TS core + React UI + Next routing/server/cache semantics |
+| React web app | `frontend-engineering` + `typescript-quality` + `react-quality` | Frontend discovery and Layro check + TS core + React UI behavior |
+| Next.js app | `frontend-engineering` + `typescript-quality` + `react-quality` + `nextjs-quality` | Frontend discovery and Layro check + TS core + React UI + Next routing/server/cache semantics |
 | Python app | `python-quality` | Python language, runtime, packaging, and async correctness |
 | Feature, fix, refactor or PR | `engineering-delivery` plus the relevant language skill | Acceptance behavior, vertical-slice implementation, evidence, independent spec and engineering review |
 | New native desktop app | `engineering-delivery` + `rune-desktop` | Rune is the preferred UI framework; pinned upstream commit, stateful interactions, headless scene/tree/script verification and native OS testing |
+
+For a React web UI with reusable component needs, `frontend-engineering` invokes `layro-ui` before implementing that UI. The Layro skill verifies working MCP access, follows official setup and OAuth instructions when needed, searches and inspects candidate components, checks licences and dependencies, and verifies integration. It does not apply to non-React or native desktop projects, and does not force a component when no suitable match exists.
 
 For a feature, bug, or PR, invoke existing `tdd`, `diagnosing-bugs`, and `code-review` as appropriate; the quality skill supplies language-specific guardrails **inside** that workflow. An agent should load only the applicable skills rather than combining all six in every task.
 
@@ -45,4 +47,4 @@ No skill can force its use in a separate project until the target agent loads it
 
 ## Maintenance
 
-Recheck official documentation when framework major versions change, especially Next.js caching/rendering and React Compiler integration. Do not blindly synchronize upstream community skills; propose individual improvements only with a specific behavior or failure they address. Follow [CONTRIBUTING.md](CONTRIBUTING.md) and run `python scripts/validate-skills.py`.
+Recheck official documentation when framework major versions change, especially Next.js caching/rendering and React Compiler integration. Recheck Layro's MCP and CLI instructions before changing setup commands. Do not blindly synchronize upstream community skills; propose individual improvements only with a specific behavior or failure they address. Follow [CONTRIBUTING.md](CONTRIBUTING.md) and run `python scripts/validate-skills.py`.
